@@ -1,0 +1,86 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+html {
+  font-size: 18px;
+  font-family: "Inter", "Segoe UI", "Helvetica Neue", Arial, "Liberation Sans", sans-serif;
+  line-height: 1.7;
+  color: #1e293b;
+}
+
+.dark html {
+  color: #f1f5f9;
+}
+
+body {
+  background: none;
+  font-weight: 400;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+section {
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
+}
+
+@keyframes gradient-move {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+.bg-animated {
+  background: linear-gradient(270deg, #f8fafc, #bbf7d0, #e0e7ef, #cbd5e1, #f8fafc);
+  background-size: 400% 400%;
+  animation: gradient-move 16s ease-in-out infinite;
+}
+
+.dark .bg-animated {
+  background: linear-gradient(270deg, #0f172a, #166534, #1e293b, #334155, #0f172a);
+  background-size: 400% 400%;
+  animation: gradient-move 16s ease-in-out infinite;
+}
+
+.card {
+  background: #fff;
+  color: #1e293b;
+  box-shadow: 0 2px 16px 0 rgba(30, 41, 59, 0.08);
+  /* border: 2px solid #bbf7d0; */
+}
+
+.dark .card {
+  background: #1e293b;
+  color: #f1f5f9;
+  box-shadow: 0 2px 16px 0 rgba(15, 23, 42, 0.32);
+  /* border: 2px solid #166534; */
+}
+
+.text-accent {
+  color: #16a34a;
+}
+
+.dark .text-accent {
+  color: #bbf7d0;
+}
+
+.bg-accent {
+  background: #bbf7d0;
+}
+
+.dark .bg-accent {
+  background: #166534;
+}
