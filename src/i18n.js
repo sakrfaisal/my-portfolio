@@ -18,7 +18,7 @@ const resources = {
       email: "Email",
       email_value: "sakr1772007@gmail.com",
       skills: "Skills",
-      skills_list: ["HTML", "CSS", "JavaScript", "Tailwind CSS", "React", "Git", "GitHub"],
+      skills_list: ["HTML", "CSS", "JavaScript", "Tailwind", "React", "Git", "GitHub"],
       projects: "Projects",
       project_list: [
         {
@@ -27,6 +27,7 @@ const resources = {
           description:
             "A responsive and interactive dashboard for managing a company's team members, projects, and tasks.",
           url: "https://github.com/sakrfaisal/dashboard",
+          skills: ["HTML", "CSS"],
         },
         {
           name: "space-tourism-website",
@@ -34,6 +35,7 @@ const resources = {
           description:
             "A multi-page space exploration website with interactive navigation and responsive design, showcasing destinations, crew, and technology.",
           url: "https://github.com/sakrfaisal/space-tourism-website",
+          skills: ["HTML", "CSS", "JavaScript", "Tailwind", "React"],
         },
         {
           name: "team-portfolio",
@@ -41,6 +43,7 @@ const resources = {
           description:
             "A team portfolio website with a modern and responsive design, showcasing team members, their skills, and projects.",
           url: "https://github.com/sakrfaisal/team-portfolio",
+          skills: ["HTML", "CSS"],
         },
         {
           name: "url-shortener-landing-page",
@@ -48,6 +51,7 @@ const resources = {
           description:
             "A landing page for a URL shortening service, with user-friendly interface and real-time link management.",
           url: "https://github.com/sakrfaisal/url-shortener-landing-page",
+          skills: ["HTML", "CSS", "JavaScript", "Tailwind", "React"],
         },
         {
           name: "browser-extension-manager-ui",
@@ -55,6 +59,7 @@ const resources = {
           description:
             "A user interface for managing browser extensions, with dark mode and intuitive controls.",
           url: "https://github.com/sakrfaisal/browser-extension-manager-ui",
+          skills: ["HTML", "CSS", "JavaScript", "Tailwind"],
         },
       ],
       view_all_projects: "View All Projects",
@@ -79,7 +84,7 @@ const resources = {
       email: "البريد الإلكتروني",
       email_value: "sakr1772007@gmail.com",
       skills: "المهارات",
-      skills_list: ["HTML", "CSS", "JavaScript", "Tailwind CSS", "React", "Git", "GitHub"],
+      skills_list: ["HTML", "CSS", "JavaScript", "Tailwind", "React", "Git", "GitHub"],
       projects: "المشاريع",
       project_list: [
         {
@@ -95,7 +100,7 @@ const resources = {
           description:
             "موقع سياحي فضائي متعدد الصفحات مع تنقل تفاعلي وتصميم متجاوب، يعرض الوجهات والطاقم والتقنيات.",
           url: "https://github.com/sakrfaisal/space-tourism-website",
-          skills: ["HTML", "CSS", "JavaScript", "Tailwind CSS", "React"],
+          skills: ["HTML", "CSS", "JavaScript", "Tailwind", "React"],
         },
         {
           name: "team-portfolio",
@@ -111,14 +116,14 @@ const resources = {
           description:
             "صفحة هبوط لخدمة تقصير الروابط، بواجهة سهلة الاستخدام وإدارة روابط في الوقت الفعلي.",
           url: "https://github.com/sakrfaisal/url-shortener-landing-page",
-          skills: ["HTML", "CSS", "JavaScript", "Tailwind CSS", "React"],
+          skills: ["HTML", "CSS", "JavaScript", "Tailwind", "React"],
         },
         {
           name: "browser-extension-manager-ui",
           tag: "challenge",
           description: "واجهة مستخدم لإدارة إضافات المتصفح، مع وضع داكن وتحكمات سهلة الاستخدام.",
           url: "https://github.com/sakrfaisal/browser-extension-manager-ui",
-          skills: ["HTML", "CSS", "JavaScript", "Tailwind CSS"],
+          skills: ["HTML", "CSS", "JavaScript", "Tailwind"],
         },
       ],
       view_all_projects: "عرض جميع المشاريع",

@@ -4,8 +4,8 @@ import { useTranslation } from "react-i18next";
 const NAV_LINKS = [
   { id: "hero", label: "Home" },
   { id: "about", label: "about" },
-  { id: "projects", label: "projects" },
   { id: "skills", label: "skills" },
+  { id: "projects", label: "projects" },
   { id: "contact", label: "contact" },
 ];
 
@@ -59,6 +59,46 @@ const Header = () => {
 
   const logoText = "</>";
 
+  const darkModeIcon = (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className="h-4 w-4 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100 text-black dark:text-white">
+      <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path>
+    </svg>
+  );
+
+  const lightModeIcon = (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className="h-4 w-4 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0 text-black dark:text-white">
+      <circle cx="12" cy="12" r="4"></circle>
+      <path d="M12 2v2"></path>
+      <path d="M12 20v2"></path>
+      <path d="m4.93 4.93 1.41 1.41"></path>
+      <path d="m17.66 17.66 1.41 1.41"></path>
+      <path d="M2 12h2"></path>
+      <path d="M20 12h2"></path>
+      <path d="m6.34 17.66-1.41 1.41"></path>
+      <path d="m19.07 4.93-1.41 1.41"></path>
+    </svg>
+  );
+
   return (
     <>
       <header
@@ -83,13 +123,13 @@ const Header = () => {
           <div className="flex gap-2 items-center">
             <button
               onClick={toggleLanguage}
-              className="px-3 py-1 rounded border text-sm text-black dark:text-white border-gray-500">
+              className="p-3 rounded text-xs text-black dark:text-white hover:bg-gray-200 dark:hover:bg-gray-700">
               {isEnglish ? "AR" : "EN"}
             </button>
             <button
               onClick={toggleDark}
-              className="px-3 py-1 rounded border text-sm border-gray-500">
-              {dark ? "☀️" : "🌙"}
+              className="p-3 rounded text-xs hover:bg-gray-200 dark:hover:bg-gray-700">
+              {dark ? darkModeIcon : lightModeIcon}
             </button>
             <button
               className="md:hidden flex flex-col justify-center items-center w-8 h-8 ml-2"
