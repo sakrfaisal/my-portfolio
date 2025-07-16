@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 
 const NAV_LINKS = [
-  { id: "hero", label: "Home" },
+  { id: "hero", label: "home" },
   { id: "about", label: "about" },
   { id: "skills", label: "skills" },
   { id: "projects", label: "projects" },
@@ -18,10 +18,12 @@ const getInitialDarkMode = () => {
 const Header = () => {
   const { i18n, t } = useTranslation();
   const isEnglish = i18n.language === "en";
+
   const toggleLanguage = () => {
     const newLang = isEnglish ? "ar" : "en";
     i18n.changeLanguage(newLang);
     document.documentElement.dir = newLang === "ar" ? "rtl" : "ltr";
+    localStorage.setItem("lang", newLang);
   };
 
   // Dark mode
@@ -39,7 +41,7 @@ const Header = () => {
 
   // Mobile nav
   const [navOpen, setNavOpen] = useState(false);
-  const [active, setActive] = useState("about");
+  const [active, setActive] = useState("hero");
   useEffect(() => {
     const handleScroll = () => {
       const offsets = NAV_LINKS.map(({ id }) => {
@@ -103,18 +105,18 @@ const Header = () => {
     <>
       <header
         data-aos="fade-down"
-        className="fixed left-1/2 -translate-x-1/2 mt-4 top-0 z-50 w-[95vw] max-w-5xl rounded-full bg-white/90 dark:bg-gray-900/90 shadow-lg border-none dark:border dark:border-border backdrop-blur flex items-center justify-between px-6 transition-all">
-        <div className="container flex items-center justify-between h-12 mx-auto px-0">
-          <span className="font-bold text-xl text-black dark:text-white">{logoText}</span>
-          <nav className="hidden md:flex gap-6">
+        className="w-9/10 max-w-7xl fixed left-1/2 -translate-x-1/2 mt-4 top-0 z-50 container mx-auto px-4 rounded-full bg-muted shadow-lg border-none border-border backdrop-blur flex items-center justify-between transition-all">
+        <div className="w-full flex items-center justify-between h-12">
+          <span className="font-bold text-xl text-foreground">{logoText}</span>
+          <nav className="hidden md:flex gap-4">
             {NAV_LINKS.map((link) => (
               <a
                 key={link.id}
                 href={`#${link.id}`}
                 className={`text-base font-medium transition-colors px-2 py-1 rounded ${
                   active === link.id
-                    ? "bg-blue-600 text-white dark:bg-blue-400 dark:text-black"
-                    : "text-gray-700 dark:text-gray-200 hover:bg-gray-200 dark:hover:bg-gray-700"
+                    ? "bg-primary text-primary-foreground"
+                    : "text-foreground hover:bg-accent"
                 }`}>
                 {t(link.label)}
               </a>
@@ -123,12 +125,14 @@ const Header = () => {
           <div className="flex gap-2 items-center">
             <button
               onClick={toggleLanguage}
-              className="p-3 rounded text-xs text-black dark:text-white hover:bg-gray-200 dark:hover:bg-gray-700">
+              className="p-3 rounded text-xs text-black dark:text-white hover:bg-gray-200 dark:hover:bg-gray-700"
+              aria-label={`${isEnglish ? "Arabic" : "English"}`}>
               {isEnglish ? "AR" : "EN"}
             </button>
             <button
               onClick={toggleDark}
-              className="p-3 rounded text-xs hover:bg-gray-200 dark:hover:bg-gray-700">
+              className="p-3 rounded text-xs hover:bg-gray-200 dark:hover:bg-gray-700"
+              aria-label="Toggle Dark Mode">
               {dark ? darkModeIcon : lightModeIcon}
             </button>
             <button
@@ -152,15 +156,15 @@ const Header = () => {
         </div>
       </header>
       {navOpen && (
-        <nav className="fixed left-1/2 -translate-x-1/2 top-[5.5rem] z-40 w-[90vw] max-w-3xl rounded-2xl bg-white/95 dark:bg-gray-900/95 shadow-lg border dark:border-border px-4 py-6 flex flex-col gap-2 md:hidden animate-fadein">
+        <nav className="fixed left-1/2 -translate-x-1/2 top-[5.5rem] z-40 w-[90vw] max-w-3xl rounded-2xl bg-background/95 shadow-lg border border-border px-4 py-6 flex flex-col gap-2 md:hidden animate-fadein">
           {NAV_LINKS.map((link) => (
             <a
               key={link.id}
               href={`#${link.id}`}
               className={`text-lg font-semibold transition-colors px-2 py-3 rounded text-center ${
                 active === link.id
-                  ? "bg-blue-600 text-white dark:bg-blue-400 dark:text-black"
-                  : "text-gray-700 dark:text-gray-200 hover:bg-gray-200 dark:hover:bg-gray-700"
+                  ? "bg-primary text-primary-foreground"
+                  : "text-foreground hover:bg-accent"
               }`}
               onClick={() => setNavOpen(false)}>
               {t(link.label)}

@@ -9,24 +9,14 @@ import Footer from "./components/Footer";
 
 function App() {
   return (
-    <div className="bg-animated min-h-screen flex flex-col">
+    <div className="min-h-screen bg-background text-foreground flex flex-col">
       <Header />
-      <main className="flex-1 pt-18">
-        <div className="mb-16">
-          <Hero />
-        </div>
-        <div className="mb-16">
-          <About />
-        </div>
-        <div className="mb-16">
-          <Skills />
-        </div>
-        <div className="mb-16">
-          <Projects />
-        </div>
-        <div>
-          <Contact />
-        </div>
+      <main className="flex-1">
+        <Hero />
+        <About />
+        <Skills />
+        <Projects />
+        <Contact />
       </main>
       <Footer />
     </div>
