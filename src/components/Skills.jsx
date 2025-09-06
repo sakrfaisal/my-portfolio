@@ -3,8 +3,10 @@ import {
   SiHtml5,
   SiCss3,
   SiJavascript,
+  SiTypescript,
   SiTailwindcss,
   SiReact,
+  SiNextdotjs,
   SiGit,
   SiGithub,
 } from "react-icons/si";
@@ -13,8 +15,10 @@ const skillIcons = {
   HTML: <SiHtml5 className="inline text-orange-500 text-2xl" title="HTML5" />,
   CSS: <SiCss3 className="inline text-blue-500 text-2xl" title="CSS3" />,
   JavaScript: <SiJavascript className="inline text-yellow-400 text-2xl" title="JavaScript" />,
-  "Tailwind CSS": <SiTailwindcss className="inline text-cyan-400 text-2xl" title="Tailwind CSS" />,
+  TypeScript: <SiTypescript className="inline text-blue-500 text-2xl" title="TypeScript" />,
+  Tailwind: <SiTailwindcss className="inline text-cyan-400 text-2xl" title="Tailwind CSS" />,
   React: <SiReact className="inline text-cyan-500 text-2xl" title="React" />,
+  Next: <SiNextdotjs className="inline text-white text-2xl" title="Next.js" />,
   Git: <SiGit className="inline text-red-500 text-2xl" title="Git" />,
   GitHub: <SiGithub className="inline text-gray-500 text-2xl" title="GitHub" />,
 };
@@ -37,7 +41,7 @@ const Skills = () => {
               data-aos="zoom-in"
               key={idx}
               className="px-4 py-2 bg-accent text-accent-foreground rounded text-lg font-medium shadow-md w-full text-center flex items-center justify-center gap-3">
-              {skillIcons[skill === "Tailwind" ? "Tailwind CSS" : skill] || null}
+              {skillIcons[skill] || null}
               <span>{skill}</span>
             </li>
           ))}

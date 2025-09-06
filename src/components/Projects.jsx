@@ -33,13 +33,13 @@ const Projects = () => {
             <div data-aos="fade-up" key={project.name}>
               <div
                 key={project.name}
-                className="card project-card block rounded-lg shadow overflow-hidden group border h-full">
+                className="card project-card block rounded-lg shadow overflow-hidden border h-full">
                 <img
                   src={imagePath}
                   alt={project.name + " screenshot"}
                   width={300}
                   height={300}
-                  className="w-auto object-contain border-b border-border transition-all duration-300 group-hover:scale-105"
+                  className="w-auto object-contain border-b border-border transition-all duration-300 hover:scale-105"
                   loading="lazy"
                   onError={(e) => {
                     e.target.style.display = "none";

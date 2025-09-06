@@ -1,6 +1,19 @@
 import i18n from "i18next";
 import { initReactI18next } from "react-i18next";
 
+const skills = [
+  "HTML",
+  "CSS",
+  "JavaScript",
+  "TypeScript",
+  "Tailwind",
+  "React",
+  "Next",
+  "GSAP",
+  "Git",
+  "GitHub",
+];
+
 const resources = {
   en: {
     translation: {
@@ -23,11 +36,25 @@ const resources = {
       email_value: "sakr1772007@gmail.com",
       skills: "Skills",
       skills_subtitle: "A comprehensive toolkit for building modern, scalable applications.",
-      skills_list: ["HTML", "CSS", "JavaScript", "Tailwind", "React", "Git", "GitHub"],
+      skills_list: skills,
       projects: "Projects",
       projects_subtitle:
         "A showcase of my recent work, demonstrating skills in modern web development",
       project_list: [
+        {
+          name: "gsap-cocktails",
+          description:
+            "Modern React landing page for a cocktail bar, featuring GSAP animations and responsive design.",
+          url: "https://github.com/sakrfaisal/gsap-cocktails",
+          skills: ["HTML", "CSS", "JavaScript", "Tailwind", "React", "GSAP"],
+        },
+        {
+          name: "github-profile-master",
+          description:
+            "A React app to view GitHub profiles and repositories, featuring a clean, responsive interface and real-time data from the GitHub API.",
+          url: "https://github.com/sakrfaisal/github-profile-master",
+          skills: ["HTML", "CSS", "TypeScript", "Tailwind", "React"],
+        },
         {
           name: "space-tourism-website",
           description:
@@ -122,10 +149,23 @@ const resources = {
       email_value: "sakr1772007@gmail.com",
       skills: "المهارات",
       skills_subtitle: "مهارات متكاملة لبناء تطبيقات مميزة وقابلة للتطوير.",
-      skills_list: ["HTML", "CSS", "JavaScript", "Tailwind", "React", "Git", "GitHub"],
+      skills_list: skills,
       projects: "المشاريع",
       projects_subtitle: "نماذج لأعمالي الاخيرة التي تبرز مهاراتي في تطوير الويب",
       project_list: [
+        {
+          name: "gsap-cocktails",
+          description: "صفحة هبوط حديثة بـ React لبار كوكتيل، تتميز بحركات GSAP وتصميم متجاوب.",
+          url: "https://github.com/sakrfaisal/gsap-cocktails",
+          skills: ["HTML", "CSS", "JavaScript", "Tailwind", "React", "GSAP"],
+        },
+        {
+          name: "github-profile-master",
+          description:
+            "تطبيق React لعرض ملفات تعريف ومستودعات GitHub، يتميز بواجهة نظيفة ومتجاوبة وبيانات مباشرة من GitHub API.",
+          url: "https://github.com/sakrfaisal/github-profile-master",
+          skills: ["HTML", "CSS", "TypeScript", "Tailwind", "React"],
+        },
         {
           name: "space-tourism-website",
           description:
