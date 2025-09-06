@@ -104,11 +104,6 @@ a {
   box-shadow: var(--color-shadow-card);
 }
 
-.project-card:hover {
-  transform: scale(1.05);
-  transition: transform 0.3s ease-in-out;
-}
-
 .text-gradient {
   background-image: var(--color-text-gradient);
   background-position-x: 0;

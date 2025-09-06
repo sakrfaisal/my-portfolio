@@ -5,7 +5,8 @@ import teamPortfolio from "../assets/team-portfolio.webp";
 import dashboard from "../assets/dashboard.webp";
 import browserExtension from "../assets/browser-extension-manager-ui.webp";
 import productListWithCart from "../assets/product-list-with-cart-main.webp";
-
+import githubProfileMaster from "../assets/github-profile-master.webp";
+import gsapCocktails from "../assets/gsap-cocktails.webp";
 const Projects = () => {
   const { t } = useTranslation();
   const projects = t("project_list", { returnObjects: true });
@@ -17,6 +18,8 @@ const Projects = () => {
     dashboard: dashboard,
     "browser-extension-manager-ui": browserExtension,
     "product-list-with-cart-main": productListWithCart,
+    "github-profile-master": githubProfileMaster,
+    "gsap-cocktails": gsapCocktails,
   };
 
   return (
@@ -33,18 +36,20 @@ const Projects = () => {
             <div data-aos="fade-up" key={project.name}>
               <div
                 key={project.name}
-                className="card project-card block rounded-lg shadow overflow-hidden border h-full">
-                <img
-                  src={imagePath}
-                  alt={project.name + " screenshot"}
-                  width={300}
-                  height={300}
-                  className="w-auto object-contain border-b border-border transition-all duration-300 hover:scale-105"
-                  loading="lazy"
-                  onError={(e) => {
-                    e.target.style.display = "none";
-                  }}
-                />
+                className="card project-card block rounded-lg shadow overflow-hidden border h-full group">
+                {imagePath && (
+                  <img
+                    src={imagePath}
+                    alt={project.name + " screenshot"}
+                    width={300}
+                    height={300}
+                    className="w-auto object-contain border-b border-border transition-all duration-300 group-hover:scale-105"
+                    loading="lazy"
+                    onError={(e) => {
+                      e.target.style.display = "none";
+                    }}
+                  />
+                )}
                 <div className="flex flex-col justify-between gap-3 p-4">
                   <div className="flex items-center gap-2">
                     <h3 className="grow text-xl font-semibold text-foreground">{project.name}</h3>
